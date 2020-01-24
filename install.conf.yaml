@@ -1,0 +1,21 @@
+- defaults:
+        link:
+                relink: true
+
+- clean: ['~']
+
+- link:
+        ~/.zshrc:
+                path: .zshrc
+        ~/.vimrc: 
+                path: .vimrc
+        ~/.tmux.conf: 
+                path: .tmux.conf
+        ~/.Xresources:
+                path: .Xresources
+        ~/.config/i3/config: 
+                path: .i3
+
+- shell:
+        - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, install Vundle.vim]
+        - [vim +PluginInstall +qall, install vim plugins]

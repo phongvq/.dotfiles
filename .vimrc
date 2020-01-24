@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'dracula/vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
@@ -57,7 +57,7 @@ set relativenumber
 Plugin 'flazz/vim-colorschemes'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-execute pathogen#infect()
+" execute pathogen#infect()
 map \           :NERDTreeToggle<CR>
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -65,10 +65,9 @@ let g:ctrlp_cmd = 'CtrlP'
 if has("patch-8.1.0360")
     set diffopt+=internal,algorithm:patience
 endif
+call vundle#end()
 
-
-
-set shell=/usr/bin/fish
+set shell=/usr/bin/zsh
 
 
 nnoremap <C-e> :NERDTreeToggle<CR>
