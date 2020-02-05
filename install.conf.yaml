@@ -15,7 +15,7 @@
                 path: .Xresources
         ~/.config/i3/config: 
                 path: .i3
-
 - shell:
         - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, install Vundle.vim]
         - [vim +PluginInstall +qall, install vim plugins]
+        - [ln -s $(pwd)/scripts ~/.scripts, create scripts symlink]

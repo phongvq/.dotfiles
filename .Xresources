@@ -38,6 +38,10 @@
 *.color15: #fdf6e3
 
 !! URxvt Appearance
+URxvt.transparent:   true
+URxvt.shading:       20
+
+Urxvt.background: [90]#000000
 URxvt.font: xft:Iosevka:style=Regular:size=14
 URxvt.boldFont: xft:Iosevka:style=Bold:size=14
 URxvt.italicFont: xft:Iosevka:style=Italic:size=14
@@ -67,8 +71,8 @@ URxvt.keysym.Control-Left: \033[1;5D
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search

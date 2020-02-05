@@ -52,7 +52,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -159,6 +159,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# lockscreen
+bindsym mod1+Shift+l exec "i3lock"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -197,9 +199,9 @@ bindsym $mod+Ctrl+$left resize grow width 10 px or 10 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+#}
 
 # i3 gaps
 for_window [class=".*"] border pixel 5
@@ -227,5 +229,7 @@ bindsym mod1+Shift+o gaps outer current minus 10
 exec i3-config-wizard
 
 # User startup script.. 
-set $autoconf="/mnt/wannacry/learn/linux/automation/dotfiles/auto_reload.sh"
+set $autoconf="~/.scripts/auto_reload.sh"
 exec $autoconf
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

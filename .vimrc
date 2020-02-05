@@ -58,7 +58,7 @@ Plugin 'flazz/vim-colorschemes'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " execute pathogen#infect()
-map \           :NERDTreeToggle<CR>
+" map \           :NERDTreeToggle<CR>
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -70,12 +70,18 @@ call vundle#end()
 set shell=/usr/bin/zsh
 
 
-nnoremap <C-e> :NERDTreeToggle<CR>
+" nnoremap <C-e> :NERDTreeToggle<CR>
 
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+nnoremap ,y "+y
+nnoremap ,p "+p
+
+nnoremap ; :
+nnoremap : ;
 
 
 ""Plugin 'fenetikm/falcon'
@@ -93,3 +99,4 @@ colorscheme dracula
 
 set incsearch
 set cursorline
+syntax on 

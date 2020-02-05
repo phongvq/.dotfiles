@@ -109,5 +109,15 @@ source $ZSH/oh-my-zsh.sh
 # custom alias
 alias pacs="sudo pacman -Sy"
 alias pacf="sudo pacman -F"
+
 alias v="vim"
 alias sv="sudo vim"
+alias vzsh="vim ~/.zshrc"
+alias vvim="vim ~/.vimrc"
+alias vi3="vim ~/.config/i3/config"
+
+alias learn="cd /mnt/wannacry/learn/"
+
+# switch capslock and escape
+sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
+
