@@ -49,7 +49,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -233,3 +233,5 @@ set $autoconf="~/.scripts/auto_reload.sh"
 exec $autoconf
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id compton
+
