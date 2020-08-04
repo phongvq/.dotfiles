@@ -160,7 +160,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
-bindsym mod1+Shift+l exec "i3lock"
+bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
+#bindsym mod1+Shift+l exec i3lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -233,5 +234,11 @@ set $autoconf="~/.scripts/auto_reload.sh"
 exec $autoconf
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id compton
+exec_always --no-startup-id compton
+#exec_always --no-startup-id betterlockscreen -w dim -u $HOME/Pictures
+#exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
+exec_always --no-startup-id $HOME/.config/i3/random_wallpapers.sh
+
+
+
 
