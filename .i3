@@ -160,8 +160,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
-bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
-#bindsym mod1+Shift+l exec i3lock
+# bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
+bindsym mod1+Shift+l exec i3lock-fancy-dualmonitor -gp
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -205,16 +205,27 @@ bindsym $mod+Ctrl+$left resize grow width 10 px or 10 ppt
 #}
 
 # i3 gaps
-for_window [class=".*"] border pixel 5
+for_window [class=".*"] border pixel 2
+client.focused #555555 #555555 #555555 #555555     #CC0000
+
+
 
 gaps inner 10
 gaps outer 05
 smart_gaps on
 
-bindsym mod1+i gaps inner current plus 10
-bindsym mod1+Shift+i gaps inner current minus 10
-bindsym mod1+o gaps outer current plus 10
-bindsym mod1+Shift+o gaps outer current minus 10
+bindsym mod1+i gaps inner current plus 5
+bindsym mod1+Shift+i gaps inner current minus 5
+bindsym mod1+o gaps outer current plus 5
+bindsym mod1+Shift+o gaps outer current minus 5
+
+#######################################################################
+# Multiple monitors configuration
+#######################################################################
+bindsym $mod+p move workspace to output left
+#bindsym $mod1+Shift+1 move workspace to output right
+bindsym $mod+Shift+p focus output left
+
 
 
 #######################################################################
@@ -230,15 +241,13 @@ bindsym mod1+Shift+o gaps outer current minus 10
 exec i3-config-wizard
 
 # User startup script.. 
-set $autoconf="~/.scripts/auto_reload.sh"
+#set $autoconf="~/.scripts/auto_reload.sh"
 exec $autoconf
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id compton
+exec_always --no-startup-id compton --shadow-exclude '!focused'
 #exec_always --no-startup-id betterlockscreen -w dim -u $HOME/Pictures
 #exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
-exec_always --no-startup-id $HOME/.config/i3/random_wallpapers.sh
-
-
-
-
+exec --no-startup-id .local/bin/random_wallpapers.sh
+exec_always copyq
+exec_always xrandr --output DP-1 --auto --left-of HDMI-1

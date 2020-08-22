@@ -100,3 +100,6 @@ colorscheme dracula
 set incsearch
 set cursorline
 syntax on 
+set termguicolors
+
+autocmd BufNewFile,BufRead Jenkinsfile* set syntax=groovy
