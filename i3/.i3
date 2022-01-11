@@ -246,7 +246,7 @@ exec $autoconf
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --shadow-exclude '!focused'
-#exec_always --no-startup-id betterlockscreen -w dim -u $HOME/Pictures
+#exec_always --no-startup-id betterlockscreen bindsym mod1+Shift+o gaps outer current minus 5-w dim -u $HOME/Pictures
 #exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
 exec --no-startup-id .local/bin/random_wallpapers.sh
 exec_always copyq
