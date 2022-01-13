@@ -1,0 +1,11 @@
+alias ls='ls --color=auto'
+
+alias v="nvim"
+alias vim="nvim"
+alias sv="sudo nvim"
+alias vi3="vim ~/.config/i3/config"
+alias vzsh="vim ~/.zshrc"
+
+alias ff="firefox -p"
+
+alias tcvcode="cd ~/topcv/code"
