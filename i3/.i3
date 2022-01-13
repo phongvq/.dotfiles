@@ -49,7 +49,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+q kill
@@ -97,7 +97,7 @@ bindsym $mod+equal split vertical
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -206,8 +206,13 @@ bindsym $mod+Ctrl+$left resize grow width 10 px or 10 ppt
 
 # i3 gaps
 for_window [class=".*"] border pixel 2
-client.focused #555555 #555555 #555555 #555555     #CC0000
+client.focused          #4C7899 #285577 #FFFFFF #2E9EF4   #285577
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
+client.background       #FFFFFF
 
 
 gaps inner 10
@@ -222,11 +227,9 @@ bindsym mod1+Shift+o gaps outer current minus 5
 #######################################################################
 # Multiple monitors configuration
 #######################################################################
-bindsym $mod+p move workspace to output left
+bindsym $mod+Shift+p move workspace to output left
 #bindsym $mod1+Shift+1 move workspace to output right
-bindsym $mod+Shift+p focus output left
-
-
+bindsym $mod+p focus output left
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -247,7 +250,7 @@ exec $autoconf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --shadow-exclude '!focused'
 #exec_always --no-startup-id betterlockscreen bindsym mod1+Shift+o gaps outer current minus 5-w dim -u $HOME/Pictures
-#exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
-exec --no-startup-id .local/bin/random_wallpapers.sh
+exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
+#exec --no-startup-id .local/bin/random_wallpapers.sh
 exec_always copyq
 exec_always xrandr --output DP-1 --auto --left-of HDMI-1
