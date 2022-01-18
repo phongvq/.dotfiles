@@ -49,7 +49,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -161,7 +161,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
 # bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
-bindsym mod1+Shift+l exec i3lock-fancy-dualmonitor -gp
+bindsym mod1+Shift+l exec i3lock -c 000000
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

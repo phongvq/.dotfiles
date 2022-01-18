@@ -1,11 +1,35 @@
 alias ls='ls --color=auto'
 
+# neovim
 alias v="nvim"
 alias vim="nvim"
 alias sv="sudo nvim"
+
+# modify config
 alias vi3="vim ~/.config/i3/config"
 alias vzsh="vim ~/.zshrc"
+alias vbash="vim ~/.bashrc"
+alias valias="vim ~/.alias"
+alias vkitty="vim ~/.config/kitty/kitty.conf"
+
+# reload config
+alias rlzsh="source ~/.zshrc"
+
+# k8s
+alias kns="kubens"
+alias kctx="kubectx"
 
 alias ff="firefox -p"
 
+
+alias gcli="gcloud beta interactive"
+
+alias n="nnn"
+
+# files, dirs
 alias tcvcode="cd ~/topcv/code"
+
+kube_aliases="$HOME/.kube_aliases"
+if [[ -f "${kube_aliases}" ]]; then
+	source "${kube_aliases}"
+fi
