@@ -161,7 +161,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
 # bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
-bindsym mod1+Shift+l exec i3lock-fancy-dualmonitor -gp
+# bindsym mod1+Shift+l exec i3lock-fancy-dualmonitor -gp
+bindsym mod1+Shift+l exec i3lock  --color=000000
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -205,10 +206,15 @@ bindsym $mod+Ctrl+$left resize grow width 10 px or 10 ppt
 #}
 
 # i3 gaps
-for_window [class=".*"] border pixel 2
-client.focused #555555 #555555 #555555 #555555     #CC0000
+for_window [class=".*"] border pixel 4
+# class                 border  bground text    indicator child_border
+client.focused          #4C7899 #285577 #FFFFFF #2E9EF4   #285577
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-
+client.background       #FFFFFF
 
 gaps inner 10
 gaps outer 05
@@ -251,3 +257,4 @@ exec_always --no-startup-id compton --shadow-exclude '!focused'
 exec --no-startup-id .local/bin/random_wallpapers.sh
 exec_always copyq
 exec_always xrandr --output DP-1 --auto --left-of HDMI-1
+
