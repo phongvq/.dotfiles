@@ -49,7 +49,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -97,7 +97,7 @@ bindsym $mod+equal split vertical
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -161,8 +161,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
 # bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
-# bindsym mod1+Shift+l exec i3lock-fancy-dualmonitor -gp
-bindsym mod1+Shift+l exec i3lock  --color=000000
+bindsym mod1+Shift+l exec i3lock -c 000000
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -228,11 +227,9 @@ bindsym mod1+Shift+o gaps outer current minus 5
 #######################################################################
 # Multiple monitors configuration
 #######################################################################
-bindsym $mod+p move workspace to output left
+bindsym $mod+Shift+p move workspace to output left
 #bindsym $mod1+Shift+1 move workspace to output right
-bindsym $mod+Shift+p focus output left
-
-
+bindsym $mod+p focus output left
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -253,8 +250,8 @@ exec $autoconf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --shadow-exclude '!focused'
 #exec_always --no-startup-id betterlockscreen bindsym mod1+Shift+o gaps outer current minus 5-w dim -u $HOME/Pictures
-#exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
-exec --no-startup-id .local/bin/random_wallpapers.sh
+exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
+#exec --no-startup-id .local/bin/random_wallpapers.sh
 exec_always copyq
 exec_always xrandr --output DP-1 --auto --left-of HDMI-1
 
