@@ -7,6 +7,7 @@ alias sv="sudo nvim"
 
 # modify config
 alias vi3="vim ~/.config/i3/config"
+alias vvim="vim ~/.config/nvim/init.vim"
 alias vzsh="vim ~/.zshrc"
 alias vbash="vim ~/.bashrc"
 alias valias="vim ~/.alias"

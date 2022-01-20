@@ -44,7 +44,7 @@ export CLOUDSDK_PYTHON="/usr/bin/python3.9"
 
 # set default editor for other tools (git, nnn, etc.)
 command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
-command -v vim >/dev/null 2>&1 && export EDITOR=vim
+#command -v vim >/dev/null 2>&1 && export EDITOR=vim
 
 
 # add go pkgs to PATH

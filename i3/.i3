@@ -228,8 +228,13 @@ bindsym mod1+Shift+o gaps outer current minus 5
 # Multiple monitors configuration
 #######################################################################
 bindsym $mod+Shift+p move workspace to output left
-#bindsym $mod1+Shift+1 move workspace to output right
 bindsym $mod+p focus output left
+
+# assign workspace to monitor 
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output secondary
+workspace 4 output secondary
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
