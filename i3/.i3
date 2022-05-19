@@ -103,7 +103,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -161,7 +161,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lockscreen
 # bindsym mod1+Shift+l exec betterlockscreen -l dim -u ~/Pictures
-bindsym mod1+Shift+l exec i3lock -c 000000
+# bindsym mod1+Shift+l exec i3lock -c 000000
+bindsym mod1+Shift+l exec betterlockscreen --lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -254,9 +255,12 @@ exec $autoconf
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --shadow-exclude '!focused'
-#exec_always --no-startup-id betterlockscreen bindsym mod1+Shift+o gaps outer current minus 5-w dim -u $HOME/Pictures
-exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures
+# exec_always --no-startup-id betterlockscreen bindsym mod1+Shift+o gaps outer current minus 5-w dim -u $HOME/Pictures
+exec_always --no-startup-id feh --randomize --bg-fill $HOME/Pictures
+exec_always --no-startup-id betterlockscreen -u ~/Pictures/lock.png
 #exec --no-startup-id .local/bin/random_wallpapers.sh
 exec_always copyq
-exec_always xrandr --output DP-1 --auto --left-of HDMI-1
+exec_always flameshot
+exec_always ibus-daemon
+exec_always arandr $HOME/.screenlayout/topcv.sh
 

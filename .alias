@@ -12,6 +12,8 @@ alias vzsh="vim ~/.zshrc"
 alias vbash="vim ~/.bashrc"
 alias valias="vim ~/.alias"
 alias vkitty="vim ~/.config/kitty/kitty.conf"
+alias vpolybar="vim ~/.config/polybar/config"
+
 
 # reload config
 alias rlzsh="source ~/.zshrc"
@@ -19,11 +21,20 @@ alias rlzsh="source ~/.zshrc"
 # k8s
 alias kns="kubens"
 alias kctx="kubectx"
+# helm
+alias hl="helm list"
+alias hui="helm upgrade --install"
+alias hdpu="helm dependency update"
+alias htpl="helm template"
 
 alias ff="firefox -p"
 
 
+# cloud cli tool
 alias gcli="gcloud beta interactive"
+alias gprj="gcloud config set project"
+alias asi="aws-shell"
+alias gssh="gcloud compute ssh"
 
 alias n="nnn"
 
@@ -34,3 +45,16 @@ kube_aliases="$HOME/.kube_aliases"
 if [[ -f "${kube_aliases}" ]]; then
 	source "${kube_aliases}"
 fi
+alias kcns="k create ns"
+alias kaf="k apply -f"
+alias krmf="k delete -f"
+
+alias tm="tmux a -t"
+
+# arch
+alias yays="yay -S"
+
+alias lrt='ls -lrt'
+
+
+alias bfg="java -jar /opt/bfg/bfg.jar"
