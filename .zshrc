@@ -74,3 +74,7 @@ if [ -f '/home/kde/google-cloud-sdk/path.zsh.inc' ]; then . '/home/kde/google-cl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/kde/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/kde/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then . "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
+# if [ -f '/usr/local/bin/aws_completer' ]; then . '/usr/local/bin/aws_completer'; fi
+
+export CLOUDSDK_PYTHON="$(which python3)"
