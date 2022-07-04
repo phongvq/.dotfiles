@@ -13,6 +13,7 @@ alias vbash="vim ~/.bashrc"
 alias valias="vim ~/.alias"
 alias vkitty="vim ~/.config/kitty/kitty.conf"
 alias vpolybar="vim ~/.config/polybar/config"
+alias vgcf="vim .git/config"
 
 
 # reload config
@@ -50,6 +51,7 @@ if [[ -f "${kube_aliases}" ]]; then
 fi
 alias kcns="k create ns"
 alias kaf="k apply -f"
+alias kak="k apply -k"
 alias krmf="k delete -f"
 
 alias tm="tmux a -t"
