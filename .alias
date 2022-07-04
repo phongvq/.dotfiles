@@ -20,12 +20,13 @@ alias rlzsh="source ~/.zshrc"
 
 # k8s
 alias kns="kubens"
-alias kctx="kubectx"
+alias kct="kubectx"
 # helm
 alias hl="helm list"
 alias hui="helm upgrade --install"
 alias hdpu="helm dependency update"
 alias htpl="helm template"
+alias hgval="helm get values"
 
 alias ff="firefox -p"
 
@@ -35,6 +36,7 @@ alias gcli="gcloud beta interactive"
 alias gprj="gcloud config set project"
 alias asi="aws-shell"
 alias gssh="gcloud compute ssh"
+alias gscp="gcloud compute scp"
 alias gkecreds="gcloud container clusters get-credentials"
 
 alias n="nnn"

@@ -44,22 +44,19 @@ fi
 # gcloud sdk: interactive mode (beta) has issue with python3.10
 export CLOUDSDK_PYTHON="/usr/bin/python3.9"
 
-
-
 # set default editor for other tools (git, nnn, etc.)
 # command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 # command -v vim >/dev/null 2>&1 && export EDITOR=vim
 
-
 # add go pkgs to PATH
 export GOPATH="${GOPATH:-$HOME/go}"
-export PATH="$PATH:$GOPATH/bin:/opt/pycharm-community-2021.3.2/bin:/opt/Postman:${KREW_ROOT:-$HOME/.krew}/bin:/${HOME}/.local/bin"
+export GCLOUD_PATH="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/"
+export PATH="$PATH:$GOPATH/bin:/opt/pycharm-community-2021.3.2/bin:/opt/Postman:${KREW_ROOT:-$HOME/.krew}/bin:/${HOME}/.local/bin:${GCLOUD_PATH}"
 
 # zsh-vi-mode plugin has conflicted key bindings with fzf
 # to fix it, use built-in zsh's vi-mode and load fzf after setting vi-mode
 # bindkey -v
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 
 export TERM=xterm-256color
@@ -78,3 +75,5 @@ if [ -f "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/complet
 # if [ -f '/usr/local/bin/aws_completer' ]; then . '/usr/local/bin/aws_completer'; fi
 
 export CLOUDSDK_PYTHON="$(which python3)"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
