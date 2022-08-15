@@ -65,3 +65,5 @@ if [[ ! $OSTYPE == 'darwin'* ]]; then
 fi
 
 alias bfg="java -jar /opt/bfg/bfg.jar"
+alias dc="docker-compose"
+alias dbt="docker build -t"
