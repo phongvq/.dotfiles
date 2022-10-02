@@ -12,11 +12,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
 	git
+	fzf-tab
 	zsh-autosuggestions
+	fast-syntax-highlighting
 	zsh-vi-mode
 )
 
-source $ZSH/oh-my-zsh.sh
+test -f $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
 
 
 alias_path="$HOME/.alias"
@@ -24,12 +26,6 @@ if [[ -f "${alias_path}" ]]; then
 	source "${alias_path}"
 fi
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/kde/google-cloud-sdk/path.zsh.inc' ]; then . '/home/kde/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/kde/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/kde/google-cloud-sdk/completion.zsh.inc'; fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -49,5 +45,14 @@ command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 
 # add go pkgs to PATH
 export GOPATH="${GOPATH:-$HOME/go}"
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/opt/ApacheDirectoryStudio
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval `ssh-agent`
 
