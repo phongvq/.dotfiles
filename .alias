@@ -53,6 +53,7 @@ alias kcns="k create ns"
 alias kaf="k apply -f"
 alias kak="k apply -k"
 alias krmf="k delete -f"
+alias krmk="k delete -k"
 
 alias tm="tmux a -t"
 
@@ -65,3 +66,9 @@ if [[ ! $OSTYPE == 'darwin'* ]]; then
 fi
 
 alias bfg="java -jar /opt/bfg/bfg.jar"
+
+
+# docker
+alias dbt="docker build -t"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
