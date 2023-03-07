@@ -77,3 +77,4 @@ if [ -f "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/complet
 export CLOUDSDK_PYTHON="$(which python3)"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export XDG_CONFIG_HOME=$HOME/.config
