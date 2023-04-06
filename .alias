@@ -1,4 +1,4 @@
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias lrt='ls -lrt'
 
 # neovim
@@ -30,6 +30,11 @@ alias hui="helm upgrade --install"
 alias hdpu="helm dependency update"
 alias htpl="helm template"
 alias hgval="helm get values"
+alias hrm="helm uninstall"
+# kustomize
+alias kt="kustomize"
+alias ktb="kustomize build"
+alias ktba="kustomize build --enable-alpha-plugins"
 
 alias kbea="kustomize build --enable-alpha-plugins --enable-exec"
 
@@ -62,6 +67,7 @@ fi
 alias kcns="k create ns"
 alias kaf="k apply -f"
 alias kak="k apply -k"
+alias kaka="k apply --enable-alpha-plugins -k"
 alias krmf="k delete -f"
 alias krmk="k delete -k"
 
