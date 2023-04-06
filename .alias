@@ -31,6 +31,8 @@ alias hdpu="helm dependency update"
 alias htpl="helm template"
 alias hgval="helm get values"
 
+alias kbea="kustomize build --enable-alpha-plugins --enable-exec"
+
 alias ff="firefox -p"
 
 

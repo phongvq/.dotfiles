@@ -49,9 +49,11 @@ export CLOUDSDK_PYTHON="/usr/bin/python3.9"
 # command -v vim >/dev/null 2>&1 && export EDITOR=vim
 
 # add go pkgs to PATH
+export GOROOT=/usr/local/go 
 export GOPATH="${GOPATH:-$HOME/go}"
 export GCLOUD_PATH="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/"
 export PATH="$PATH:$GOPATH/bin:/opt/pycharm-community-2021.3.2/bin:/opt/Postman:${KREW_ROOT:-$HOME/.krew}/bin:/${HOME}/.local/bin:${GCLOUD_PATH}"
+export PATH=$PATH:/usr/local/go/bin:/usr/local/bin:$GOROOT
 
 # zsh-vi-mode plugin has conflicted key bindings with fzf
 # to fix it, use built-in zsh's vi-mode and load fzf after setting vi-mode
