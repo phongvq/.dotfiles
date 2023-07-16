@@ -71,20 +71,13 @@ export GOPATH="${GOPATH:-$HOME/go}"
 export PATH=$PATH:$GOPATH/bin:/opt/ApacheDirectoryStudio
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-eval `ssh-agent`
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/kde/google-cloud-sdk/path.zsh.inc' ]; then . '/home/kde/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/kde/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/kde/google-cloud-sdk/completion.zsh.inc'; fi
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l > /dev/null || ssh-add
 if [ -f "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then . "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
 # if [ -f '/usr/local/bin/aws_completer' ]; then . '/usr/local/bin/aws_completer'; fi
 
@@ -92,3 +85,10 @@ export CLOUDSDK_PYTHON="$(which python3)"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export XDG_CONFIG_HOME=$HOME/.config
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
