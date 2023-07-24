@@ -92,3 +92,4 @@ alias dcd="docker compose down"
 
 # ssh
 alias ssh="kitty +kitten ssh"
+alias dex="docker exec -ti"
