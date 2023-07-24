@@ -78,7 +78,6 @@ if [ -f '/home/phongvq/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home
 if [ -f '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/phongvq/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 eval `ssh-agent`
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/kde/google-cloud-sdk/path.zsh.inc' ]; then . '/home/kde/google-cloud-sdk/path.zsh.inc'; fi
@@ -88,7 +87,24 @@ if [ -f '/home/kde/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/kde/goo
 if [ -f "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then . "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
 # if [ -f '/usr/local/bin/aws_completer' ]; then . '/usr/local/bin/aws_completer'; fi
 
+# ssh host autocomplete
+_fzf_complete_ssh_notrigger() {
+    FZF_COMPLETION_TRIGGER='' _fzf_host_completion
+}
+complete -o bashdefault -o default -F _fzf_complete_ssh_notrigger ssh
+
 export CLOUDSDK_PYTHON="$(which python3)"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export XDG_CONFIG_HOME=$HOME/.config
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+export PATH="$PATH:/home/phongvu/sqlpackage"
+
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
